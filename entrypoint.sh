@@ -2,4 +2,4 @@
 
 python manage.py migrate
 
-gunicorn -b :5000 cookery.wsgi:application
+gunicorn -b :5000 cherno.wsgi:application
