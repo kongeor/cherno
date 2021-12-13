@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if evolutions %}
+    <div class="columns">
+        {% for evolution in evolutions %}
+            <div class="column is-one-third">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="content">
+                            <h2># {{ evolution.id }}</h2>
+                            <p>{{ evolution.created_at }}</p>
+                        </div>
+                    </div>
+                    <footer class="card-footer">
+                        <a href="{% url 'detail' evolution.id %}" class="card-footer-item">View</a>
+                    </footer>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No tracks are available.</p>
+    {% endif %}
+{% endblock %}
